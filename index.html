@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <link rel="icon" href="data:,">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>world.execute(me); — MV</title>
+  <style>
+    @font-face { font-family: 'JetBrains Mono'; src: url(/assets/fonts/JetBrainsMono-latin.woff2) format('woff2'); font-weight: 100 800; }
+    html, body { margin: 0; height: 100%; background: #000; overflow: hidden; }
+    body { display: grid; place-items: center; font-family: 'JetBrains Mono', Menlo, monospace; color: #dfe8ff; cursor: none; }
+    body.ui { cursor: default; }
+    #stage { position: relative; }
+    #gl { width: 100%; height: 100%; display: block; }
+    #start { position: absolute; inset: 0; display: grid; place-items: center; background: #000; cursor: pointer; transition: opacity .5s; z-index: 2; }
+    #start.gone { opacity: 0; pointer-events: none; }
+    #start .box { text-align: left; }
+    #start .cmd { font-size: clamp(18px, 3vw, 42px); font-weight: 600; letter-spacing: .02em; }
+    #start .cmd::after { content: '▍'; color: #49e3ff; animation: blink 1s steps(1) infinite; }
+    #start .sub { margin-top: 18px; font-size: clamp(11px, 1.1vw, 15px); color: #7f93b3; line-height: 1.8; }
+    #start .sub b { color: #49e3ff; font-weight: 600; }
+    @keyframes blink { 50% { opacity: 0; } }
+    #scrub { position: absolute; left: 0; right: 0; bottom: 0; height: 14px; cursor: pointer; opacity: 0; transition: opacity .3s; z-index: 1; }
+    body.ui #scrub { opacity: 1; }
+    #scrub::before { content: ''; position: absolute; left: 0; right: 0; bottom: 5px; height: 3px; background: rgba(255,255,255,.15); }
+    #fill { position: absolute; left: 0; bottom: 5px; height: 3px; background: #49e3ff; }
+    body.export #start, body.export #scrub { display: none; }
+    body.export { display: block; }
+  </style>
+</head>
+<body>
+  <div id="stage">
+    <canvas id="gl"></canvas>
+    <div id="start">
+      <div class="box">
+        <div class="cmd">&gt; world.execute(me);</div>
+        <div class="sub">
+          <span id="status">booting…</span><br />
+          <b id="hint"></b><br />
+          space 暂停 · ←/→ 快退/快进 5s · shift+←/→ 1s · F 全屏
+        </div>
+      </div>
+    </div>
+    <div id="scrub"><div id="fill"></div></div>
+  </div>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

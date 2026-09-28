@@ -1,0 +1,26 @@
+world.execute(me); visualizer
+Copyright (c) 2026 BYWENSHU
+
+The source code in this repository is licensed under the MIT License.
+See the LICENSE file.
+
+This license covers the visualizer software only.
+
+Third-party works
+-----------------
+
+Music and lyrics
+  "world.execute(me);" performed by Mili.
+  The composition, lyrics, and sound recording are copyright of their
+  respective rights holders. They are not included in this repository
+  and are not licensed under the MIT License. A video rendered by this
+  program muxes that recording and is a separate work; redistribute it
+  only with permission from those rights holders.
+
+Font
+  JetBrains Mono
+  Copyright 2020 The JetBrains Mono Project Authors
+  https://github.com/JetBrains/JetBrainsMono
+  Licensed under the SIL Open Font License, Version 1.1.
+  assets/fonts/*.woff2 are subset builds of that font.
+  The full license text is in assets/fonts/OFL.txt.

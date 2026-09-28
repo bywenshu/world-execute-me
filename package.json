@@ -1,0 +1,14 @@
+{
+  "name": "world-execute-me-mv",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "analyze": ".venv/bin/python analysis/analyze.py",
+    "serve": "node serve.mjs",
+    "stills": "node export/stills.mjs",
+    "export": "node export/export.mjs"
+  },
+  "devDependencies": {
+    "playwright-core": "1.56"
+  }
+}

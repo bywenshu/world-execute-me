@@ -1,0 +1,10 @@
+node_modules/
+.venv/
+out/
+.DS_Store
+
+# The recording, the timed lyrics, and any rendered video that muxes them
+# are not part of this software license. Keep them local.
+*.mp3
+*.lrc
+*.mp4
